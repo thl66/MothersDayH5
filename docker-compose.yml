@@ -4,7 +4,7 @@ services:
     container_name: mothersday-h5
     restart: unless-stopped
     ports:
-      - "${APP_PORT:-9001}:80"
+      - "${APP_PORT:-4001}:80"
     volumes:
       - ./index.html:/usr/share/nginx/html/index.html:ro
       - ./styles.css:/usr/share/nginx/html/styles.css:ro
