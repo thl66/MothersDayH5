@@ -44,10 +44,12 @@ let lastTime = 0;
 
 function resizeCanvas() {
   const ratio = Math.min(window.devicePixelRatio || 1, 2);
-  canvas.width = Math.floor(window.innerWidth * ratio);
-  canvas.height = Math.floor(window.innerHeight * ratio);
-  canvas.style.width = `${window.innerWidth}px`;
-  canvas.style.height = `${window.innerHeight}px`;
+  const viewportWidth = window.visualViewport?.width || window.innerWidth;
+  const viewportHeight = window.visualViewport?.height || window.innerHeight;
+  canvas.width = Math.floor(viewportWidth * ratio);
+  canvas.height = Math.floor(viewportHeight * ratio);
+  canvas.style.width = `${viewportWidth}px`;
+  canvas.style.height = `${viewportHeight}px`;
   ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
 }
 
@@ -183,6 +185,7 @@ nextButton.addEventListener("click", advance);
 backButton.addEventListener("click", retreat);
 resetButton.addEventListener("click", reset);
 window.addEventListener("resize", resizeCanvas);
+window.visualViewport?.addEventListener("resize", resizeCanvas);
 
 resizeCanvas();
 seedPetals();

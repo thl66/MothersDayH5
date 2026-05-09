@@ -22,6 +22,10 @@ body {
   min-height: 100%;
 }
 
+html {
+  min-height: -webkit-fill-available;
+}
+
 body {
   margin: 0;
   font-family:
@@ -31,7 +35,8 @@ body {
     radial-gradient(circle at 12% 18%, rgba(246, 177, 107, 0.24), transparent 30%),
     radial-gradient(circle at 86% 16%, rgba(112, 174, 132, 0.22), transparent 28%),
     linear-gradient(145deg, #fff6ef 0%, #ffecef 42%, #edf8ee 100%);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 button {
@@ -39,7 +44,9 @@ button {
 }
 
 .page {
-  min-height: 100dvh;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: -webkit-fill-available;
   display: grid;
   place-items: center;
 }
@@ -48,7 +55,8 @@ button {
   position: fixed;
   inset: 0;
   width: 100vw;
-  height: 100dvh;
+  height: 100vh;
+  height: 100svh;
   pointer-events: none;
   z-index: 4;
 }
@@ -56,13 +64,18 @@ button {
 .experience {
   position: relative;
   width: min(100vw, 440px);
-  min-height: 100dvh;
-  padding: max(22px, env(safe-area-inset-top)) 22px max(22px, env(safe-area-inset-bottom));
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: -webkit-fill-available;
+  padding:
+    max(18px, env(safe-area-inset-top))
+    22px
+    max(30px, calc(env(safe-area-inset-bottom) + 18px));
   display: grid;
-  grid-template-rows: auto minmax(154px, 0.72fr) minmax(250px, 1.05fr) auto auto;
+  grid-template-rows: auto minmax(126px, 0.56fr) minmax(226px, 0.92fr) auto auto;
   align-items: center;
   isolation: isolate;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .aurora {
@@ -816,36 +829,113 @@ h1 {
 
 @media (max-height: 730px) {
   .experience {
-    grid-template-rows: auto minmax(120px, 0.5fr) minmax(220px, 0.95fr) auto auto;
-    padding-top: 16px;
+    grid-template-rows: auto minmax(104px, 0.42fr) minmax(188px, 0.78fr) auto auto;
+    padding:
+      max(12px, env(safe-area-inset-top))
+      18px
+      max(24px, calc(env(safe-area-inset-bottom) + 12px));
   }
 
   h1 {
-    font-size: clamp(1.72rem, 9vw, 2.6rem);
+    font-size: clamp(1.62rem, 8.4vw, 2.35rem);
   }
 
   .subtitle {
-    margin-top: 10px;
-    min-height: 2.9em;
+    margin-top: 8px;
+    min-height: 2.5em;
+    font-size: 0.92rem;
+    line-height: 1.5;
   }
 
   .envelope-wrap {
-    height: 148px;
-    width: min(66vw, 270px);
+    height: 122px;
+    width: min(62vw, 238px);
   }
 
   .envelope {
-    height: 112px;
+    height: 92px;
+    bottom: 16px;
+  }
+
+  .letter {
+    height: 82px;
   }
 
   .garden {
-    width: min(76vw, 300px);
-    height: min(76vw, 300px);
+    width: min(68vw, 266px);
+    height: min(68vw, 266px);
+    margin-top: -18px;
   }
 
   .blessing {
-    min-height: 108px;
-    padding: 14px 15px;
+    min-height: 94px;
+    padding: 12px 14px;
+  }
+
+  .blessing-text {
+    font-size: 0.96rem;
+    line-height: 1.56;
+  }
+
+  .controls {
+    grid-template-columns: 44px 1fr minmax(104px, 1.35fr) 44px;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .primary,
+  .icon-button {
+    height: 44px;
+  }
+
+  .finale {
+    top: 47%;
+    width: min(82vw, 322px);
+  }
+
+  .finale-card {
+    padding: 20px 18px;
+  }
+}
+
+@media (max-height: 640px) {
+  .experience {
+    grid-template-rows: auto minmax(86px, 0.32fr) minmax(160px, 0.68fr) auto auto;
+  }
+
+  .date {
+    margin-bottom: 5px;
+    font-size: 0.72rem;
+  }
+
+  .subtitle {
+    min-height: 2.2em;
+  }
+
+  .envelope-wrap {
+    height: 104px;
+    width: min(58vw, 214px);
+  }
+
+  .envelope {
+    height: 78px;
+  }
+
+  .garden {
+    width: min(60vw, 232px);
+    height: min(60vw, 232px);
+  }
+
+  .blessing-label {
+    margin-bottom: 5px;
+  }
+
+  .blessing {
+    min-height: 82px;
+  }
+
+  .controls {
+    margin-top: 10px;
   }
 }
 
