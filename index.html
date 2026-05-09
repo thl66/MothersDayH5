@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>妈妈，母亲节快乐</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <canvas id="petalCanvas" class="petal-canvas" aria-hidden="true"></canvas>
+
+      <section class="experience" data-opened="false" data-step="0" aria-live="polite">
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+        <div class="aurora aurora-3"></div>
+
+        <header class="intro">
+          <p class="date">2026 Mother's Day</p>
+          <h1>妈妈，花开了</h1>
+          <p id="subtitle" class="subtitle">先轻轻打开这封信，把今天的心意送给你。</p>
+        </header>
+
+        <button id="envelopeButton" class="envelope-wrap" type="button" aria-label="打开母亲节信封">
+          <span class="envelope-shadow"></span>
+          <span class="envelope">
+            <span class="envelope-back"></span>
+            <span class="letter">
+              <span class="letter-line long"></span>
+              <span class="letter-line"></span>
+              <span class="letter-seal">爱</span>
+            </span>
+            <span class="envelope-left"></span>
+            <span class="envelope-right"></span>
+            <span class="envelope-front"></span>
+            <span class="envelope-flap"></span>
+          </span>
+        </button>
+
+        <section class="garden" aria-label="母亲节花朵">
+          <div class="moonlight"></div>
+          <button id="flowerButton" class="flower-button" type="button" aria-label="继续让花开放">
+            <span class="halo halo-outer"></span>
+            <span class="halo halo-inner"></span>
+            <span class="flower">
+              <span class="petal p1"></span>
+              <span class="petal p2"></span>
+              <span class="petal p3"></span>
+              <span class="petal p4"></span>
+              <span class="petal p5"></span>
+              <span class="petal p6"></span>
+              <span class="petal p7"></span>
+              <span class="petal p8"></span>
+              <span class="petal p9"></span>
+              <span class="petal p10"></span>
+              <span class="petal inner i1"></span>
+              <span class="petal inner i2"></span>
+              <span class="petal inner i3"></span>
+              <span class="petal inner i4"></span>
+              <span class="heart"></span>
+            </span>
+            <span class="stem"></span>
+            <span class="leaf leaf-a"></span>
+            <span class="leaf leaf-b"></span>
+            <span class="leaf leaf-c"></span>
+          </button>
+        </section>
+
+        <section class="finale" aria-label="最后的祝福">
+          <span class="finale-ring ring-a"></span>
+          <span class="finale-ring ring-b"></span>
+          <span class="spark s1"></span>
+          <span class="spark s2"></span>
+          <span class="spark s3"></span>
+          <span class="spark s4"></span>
+          <div class="finale-card">
+            <p class="finale-from">糕糕 & 小伦</p>
+            <h2>妈妈，母亲节快乐</h2>
+            <p>愿你被鲜花和爱意围住，也愿我们一直陪你慢慢看花开。</p>
+          </div>
+        </section>
+
+        <section class="blessing" aria-label="祝福卡片">
+          <p class="blessing-label">给妈妈的话</p>
+          <p id="blessingText" class="blessing-text">谢谢你把每个平常日子，都照顾得有温度。</p>
+        </section>
+
+        <nav class="controls" aria-label="互动控制">
+          <button id="backButton" class="icon-button" type="button" aria-label="上一步">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <div class="progress" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <button id="nextButton" class="primary" type="button">打开信封</button>
+          <button id="resetButton" class="icon-button" type="button" aria-label="重新开始">
+            <span aria-hidden="true">↺</span>
+          </button>
+        </nav>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
